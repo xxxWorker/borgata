@@ -33,77 +33,153 @@ const Index = () => {
 
       <main>
         {/* HERO */}
-        <section id="top" className="relative min-h-[70vh] flex items-center">
+        <section id="top" className="relative min-h-screen flex items-center hero-gradient">
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center opacity-40"
             style={{ backgroundImage: "url('/images/borgata-hero.jpg')" }}
             aria-hidden
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-secondary/90 via-secondary/70 to-primary/20" aria-hidden />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/80 to-primary/10" aria-hidden />
 
-          <div className="container relative z-10 py-20">
-            <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 bg-secondary/80 text-secondary-foreground text-xs uppercase tracking-wider">
-              Медиа продакшн
-            </div>
-            <h1 className="mt-6 font-display text-5xl md:text-7xl font-extrabold leading-[1.05] animate-fade-in">
-              Создаём киношный образ вашего бренда
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg md:text-xl text-muted-foreground animate-fade-in">
-              Реклама, клипы и бренд-видео полного цикла: от идеи и сценария до постпродакшна.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a href="#portfolio"><Button variant="hero" size="lg" className="hover-scale">Смотреть портфолио</Button></a>
-              <a href="#contact"><Button variant="outline" size="lg" className="hover-scale">Рассчитать стоимость</Button></a>
+          <div className="container relative z-10 py-32">
+            <div className="max-w-4xl">
+              <div 
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-primary/20 border border-primary/30 text-primary text-sm uppercase tracking-wider pulse-glow stagger-fade"
+                style={{ '--delay': '0s' } as any}
+              >
+                Премиальный медиа продакшн
+              </div>
+              
+              <h1 
+                className="mt-8 font-display text-6xl md:text-8xl lg:text-9xl font-extrabold leading-[0.9] text-glow stagger-fade"
+                style={{ '--delay': '0.2s' } as any}
+              >
+                Создаём<br />
+                <span className="text-primary floating">киношный</span><br />
+                образ бренда
+              </h1>
+              
+              <p 
+                className="mt-8 max-w-3xl text-xl md:text-2xl text-muted-foreground leading-relaxed stagger-fade"
+                style={{ '--delay': '0.4s' } as any}
+              >
+                Реклама, клипы и бренд-видео полного цикла: от креативной концепции и сценария до финального постпродакшна. Работаем с Sony FX, RED и Arri — снимаем в 4K и 8K.
+              </p>
+              
+              <div 
+                className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm stagger-fade"
+                style={{ '--delay': '0.6s' } as any}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full bounce-subtle"></div>
+                  <span className="text-muted-foreground">10+ лет опыта</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full bounce-subtle" style={{ animationDelay: '0.5s' }}></div>
+                  <span className="text-muted-foreground">200+ проектов</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full bounce-subtle" style={{ animationDelay: '1s' }}></div>
+                  <span className="text-muted-foreground">Полный цикл</span>
+                </div>
+              </div>
+              
+              <div 
+                className="mt-12 flex flex-col sm:flex-row gap-6 stagger-fade"
+                style={{ '--delay': '0.8s' } as any}
+              >
+                <a href="#portfolio">
+                  <Button variant="hero" size="lg" className="hover-scale pulse-glow">
+                    Смотреть портфолио
+                  </Button>
+                </a>
+                <a href="#contact">
+                  <Button variant="outline" size="lg" className="hover-scale border-primary/30 hover:border-primary">
+                    Рассчитать стоимость
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
         {/* SERVICES */}
-        <section id="services" className="container py-16 md:py-24">
-          <div className="mb-8 md:mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold">Что мы делаем</h2>
-            <p className="mt-2 text-muted-foreground">Фокус на качестве картинки, темпе и драматургии.</p>
+        <section id="services" className="container py-24 md:py-32">
+          <div className="mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-bold animate-slide-up">Что мы делаем</h2>
+            <p className="mt-4 text-xl text-muted-foreground animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              Фокус на качестве картинки, темпе и драматургии. Каждый кадр — произведение искусства.
+            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="hover-scale">
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="hover-scale border-border/50 bg-card/50 backdrop-blur-sm animate-slide-up" style={{ animationDelay: '0.2s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center gap-3"><Camera />Видео продакшн</CardTitle>
-                <CardDescription>Промо- и бренд-видео, корпоративные фильмы.</CardDescription>
+                <CardTitle className="flex items-center gap-3 text-xl">
+                  <Camera className="text-primary" />Видео продакшн
+                </CardTitle>
+                <CardDescription className="text-base">Промо- и бренд-видео, корпоративные фильмы полного цикла.</CardDescription>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">Планирование, съёмка, свет, звук — всё под ключ.</CardContent>
+              <CardContent className="text-muted-foreground">
+                Планирование, съёмка, свет, звук — всё под ключ. Работаем с профессиональным оборудованием: Sony FX6, RED Komodo, Arri Alexa.
+              </CardContent>
             </Card>
-            <Card className="hover-scale">
+            <Card className="hover-scale border-border/50 bg-card/50 backdrop-blur-sm animate-slide-up" style={{ animationDelay: '0.3s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center gap-3"><Clapperboard />Рекламные ролики</CardTitle>
-                <CardDescription>Перфоманс- и имиджевые кампании.</CardDescription>
+                <CardTitle className="flex items-center gap-3 text-xl">
+                  <Clapperboard className="text-primary" />Рекламные ролики
+                </CardTitle>
+                <CardDescription className="text-base">Перфоманс- и имиджевые кампании для брендов.</CardDescription>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">Креатив, сценарии, кастинг, локации, продакшн.</CardContent>
+              <CardContent className="text-muted-foreground">
+                Креатив, сценарии, кастинг, локации, продакшн. От концепции до релиза — создаём ролики, которые продают и запоминаются.
+              </CardContent>
             </Card>
-            <Card className="hover-scale">
+            <Card className="hover-scale border-border/50 bg-card/50 backdrop-blur-sm animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center gap-3"><Sparkles />Постпродакшн</CardTitle>
-                <CardDescription>Монтаж, цветокор, звук, VFX.</CardDescription>
+                <CardTitle className="flex items-center gap-3 text-xl">
+                  <Sparkles className="text-primary" />Постпродакшн
+                </CardTitle>
+                <CardDescription className="text-base">Монтаж, цветокоррекция, звук, VFX, анимация.</CardDescription>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">Передаём историю через ритм, цвет и звук.</CardContent>
+              <CardContent className="text-muted-foreground">
+                Передаём историю через ритм, цвет и звук. DaVinci Resolve, Adobe After Effects, Pro Tools — инструменты кинематографа.
+              </CardContent>
             </Card>
           </div>
         </section>
 
         {/* PORTFOLIO */}
-        <section id="portfolio" className="container py-16 md:py-24">
-          <div className="mb-8 md:mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold">Портфолио</h2>
-            <p className="mt-2 text-muted-foreground">Фрагменты недавних проектов.</p>
+        <section id="portfolio" className="container py-24 md:py-32">
+          <div className="mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-bold animate-slide-up">Портфолио</h2>
+            <p className="mt-4 text-xl text-muted-foreground animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              Фрагменты недавних проектов. Каждый кадр рассказывает историю.
+            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            <figure className="rounded-lg overflow-hidden group hover-scale">
-              <img src="/images/portfolio-1.jpg" alt="Кадр рекламного ролика — предметная съёмка с красной подсветкой" loading="lazy" className="w-full h-full object-cover" />
+          <div className="grid md:grid-cols-3 gap-8">
+            <figure className="rounded-xl overflow-hidden group hover-scale animate-slide-up border border-border/30" style={{ animationDelay: '0.2s' }}>
+              <img 
+                src="/images/portfolio-1.jpg" 
+                alt="Кадр рекламного ролика — предметная съёмка с красной подсветкой" 
+                loading="lazy" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" 
+              />
             </figure>
-            <figure className="rounded-lg overflow-hidden group hover-scale">
-              <img src="/images/portfolio-2.jpg" alt="Кадр клипа — силуэт танцовщицы в красном свете" loading="lazy" className="w-full h-full object-cover" />
+            <figure className="rounded-xl overflow-hidden group hover-scale animate-slide-up border border-border/30" style={{ animationDelay: '0.3s' }}>
+              <img 
+                src="/images/portfolio-2.jpg" 
+                alt="Кадр клипа — силуэт танцовщицы в красном свете" 
+                loading="lazy" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" 
+              />
             </figure>
-            <figure className="rounded-lg overflow-hidden group hover-scale">
-              <img src="/images/portfolio-3.jpg" alt="Бэкстейдж — камера на риге, мониторы режиссёра" loading="lazy" className="w-full h-full object-cover" />
+            <figure className="rounded-xl overflow-hidden group hover-scale animate-slide-up border border-border/30" style={{ animationDelay: '0.4s' }}>
+              <img 
+                src="/images/portfolio-3.jpg" 
+                alt="Бэкстейдж — камера на риге, мониторы режиссёра" 
+                loading="lazy" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" 
+              />
             </figure>
           </div>
         </section>
