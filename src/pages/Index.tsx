@@ -202,13 +202,54 @@ const Index = () => {
         </section>
 
         {/* CTA */}
-        <section id="contact" className="py-16 md:py-24 bg-primary text-primary-foreground">
-          <div className="container">
-            <h2 className="font-display text-3xl md:text-4xl font-bold">Готовы обсудить ваш проект?</h2>
-            <p className="mt-2 opacity-90">Напишите нам — ответим в течение дня.</p>
-            <div className="mt-6 flex flex-col sm:flex-row gap-4">
-              <a href="mailto:hello@borgata.studio"><Button variant="secondary" size="lg" className="hover-scale">hello@borgata.studio</Button></a>
-              <a href="#top"><Button variant="hero" size="lg" className="hover-scale">К брифу</Button></a>
+        <section id="contact" className="relative py-24 md:py-32 bg-gradient-to-br from-background via-secondary/20 to-background overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.1)_0%,transparent_70%)]" />
+          <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+          
+          <div className="container relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 rounded-full px-6 py-3 bg-primary/10 border border-primary/20 text-primary text-sm uppercase tracking-wider mb-8 pulse-glow">
+                Начнём сотрудничество
+              </div>
+              
+              <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 text-glow">
+                Готовы обсудить 
+                <span className="text-primary floating"> ваш проект</span>?
+              </h2>
+              
+              <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+                Расскажите о своих задачах — мы предложим креативное решение и просчитаем бюджет в течение дня
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="mailto:hello@borgata.studio" className="group">
+                  <Button variant="hero" size="lg" className="hover-scale pulse-glow text-lg px-8 py-4">
+                    <span className="mr-2">✉</span>
+                    hello@borgata.studio
+                  </Button>
+                </a>
+                <div className="text-muted-foreground text-sm">или</div>
+                <a href="#top" className="group">
+                  <Button variant="outline" size="lg" className="hover-scale border-primary/30 hover:border-primary text-lg px-8 py-4">
+                    Заполнить бриф
+                  </Button>
+                </a>
+              </div>
+              
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm opacity-80">
+                <div className="flex items-center justify-center gap-2">
+                  <div className="w-2 h-2 bg-primary rounded-full bounce-subtle"></div>
+                  <span>Ответ в течение дня</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <div className="w-2 h-2 bg-primary rounded-full bounce-subtle" style={{ animationDelay: '0.5s' }}></div>
+                  <span>Бесплатная консультация</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <div className="w-2 h-2 bg-primary rounded-full bounce-subtle" style={{ animationDelay: '1s' }}></div>
+                  <span>Индивидуальный подход</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
