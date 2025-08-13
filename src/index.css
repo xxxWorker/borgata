@@ -155,4 +155,26 @@ All colors MUST be HSL.
   .stagger-fade {
     animation-delay: var(--delay, 0s);
   }
+
+  /* Snap scroll sections */
+  .snap-section {
+    scroll-snap-align: start;
+    min-height: 100vh;
+  }
+
+  /* Additional animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse-glow {
+    from { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    to { box-shadow: 0 0 30px hsl(var(--primary) / 0.6); }
+  }
+
+  @keyframes bounce-subtle {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
 }
